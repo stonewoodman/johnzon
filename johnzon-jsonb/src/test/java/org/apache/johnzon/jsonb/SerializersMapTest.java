@@ -65,10 +65,6 @@ public class SerializersMapTest
     @Test
     public void deserializeMapTest() throws Exception
     {
-        MapModel mapModel = new MapModel();
-        mapModel.map.put("key1", "value1");
-        mapModel.map.put("key2", "value2");
-
         try (final Jsonb jsonb = JsonbBuilder.create()) {
             jsonb.fromJson("{ \"map\": { \"key1\": \"value1\", \"key2\": \"value2\" } }", MapModel.class);
         }
